@@ -1,0 +1,11 @@
+{
+  "welcome": "Bienvenue",
+  "desktop": {
+    "applications": {
+      "about": "A propos",
+      "contact": "Me contacter",
+      "projects": "Mes projets",
+      "cv": "Mon CV"
+    }
+  }
+}
