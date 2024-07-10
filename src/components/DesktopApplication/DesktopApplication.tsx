@@ -23,7 +23,7 @@ const DesktopApplication = ({
         alignItems: "center",
         paddingTop: "10%",
         paddingBottom: "10%",
-
+        marginBottom: "10%",
         transition: "background-color 0.5s ease",
         "&:hover": {
           cursor: `url(${cursor}), auto`,
@@ -41,7 +41,8 @@ const DesktopApplication = ({
         variant="body2"
         sx={{
           color: "white",
-          marginTop: "8px", // Adjust spacing as needed
+          marginTop: "8px",
+          userSelect: "none",
         }}
       >
         {name}

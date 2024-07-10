@@ -1,8 +1,9 @@
 import { Box, styled } from "@mui/material";
 
-import wallpaperPath from "../../assets/desktop-wallpaper.jpg";
+import wallpaperPath from "../../assets/pxfuel.jpg";
 import DesktopApplication from "../DesktopApplication/DesktopApplication";
 import getDesktopConfig from "./desktop-config";
+import DesktopFooter from "../DesktopFooter/DesktopFooter";
 
 const BoxDesktop = styled(Box)({
   backgroundImage: `url(${wallpaperPath})`,
@@ -11,6 +12,8 @@ const BoxDesktop = styled(Box)({
   backgroundPosition: "center",
   height: "100%",
   width: "100%",
+  display: "flex",
+  flexDirection: "column",
 });
 
 const BoxApplication = styled(Box)({
@@ -18,6 +21,8 @@ const BoxApplication = styled(Box)({
   width: "10%",
   flexDirection: "column",
   paddingTop: "5%",
+  height: "90%",
+  paddingLeft: "2%",
 });
 
 const Desktop = () => {
@@ -31,6 +36,9 @@ const Desktop = () => {
           return <DesktopApplication key={index} {...application} />;
         })}
       </BoxApplication>
+      <Box>
+        <DesktopFooter />
+      </Box>
     </BoxDesktop>
   );
 };

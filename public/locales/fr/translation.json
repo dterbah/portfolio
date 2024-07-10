@@ -6,6 +6,10 @@
       "contact": "Me contacter",
       "projects": "Mes projets",
       "cv": "Mon CV"
+    },
+    "menu": {
+      "shutdown": "Eteindre",
+      "searchPlaceholder": "Recherche"
     }
   }
 }
