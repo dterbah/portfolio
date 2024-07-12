@@ -14,8 +14,12 @@
   },
   "projects": {
     "sections": {
-      "pro": "Projets professionnels",
-      "perso": "Projets personnels"
+      "pro": {
+        "title": "Projets professionnels"
+      },
+      "perso": {
+        "title": "Projets personnels"
+      }
     }
   }
 }

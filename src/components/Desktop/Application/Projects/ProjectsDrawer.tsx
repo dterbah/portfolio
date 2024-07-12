@@ -26,12 +26,12 @@ const ProjectsDrawer = ({ section, onSectionChanged }: ProjectsDrawerProps) => {
     icon: ReactNode;
   }> = [
     {
-      name: t("projects.sections.perso"),
+      name: t("projects.sections.perso.title"),
       section: "perso",
       icon: <CodeIcon />,
     },
     {
-      name: t("projects.sections.pro"),
+      name: t("projects.sections.pro.title"),
       section: "pro",
       icon: <BusinessIcon />,
     },

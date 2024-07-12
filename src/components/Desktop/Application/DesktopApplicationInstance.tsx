@@ -17,7 +17,7 @@ import Draggable from "react-draggable";
 import CV from "./CV/CV";
 import About from "./About/About";
 import Contact from "./Contact/Contact";
-import Projects from "./Projects/Projects";
+import ProjectsView from "./Projects/ProjectsView";
 
 interface WindowsAppProps {
   appType: DesktopApplication;
@@ -29,7 +29,7 @@ const contentMap: { [key in DesktopApplication]: ElementType } = {
   about: About,
   cv: CV,
   contact: Contact,
-  projects: Projects,
+  projects: ProjectsView,
 };
 
 const DesktopApplicationInstance: React.FC<WindowsAppProps> = ({
