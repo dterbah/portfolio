@@ -1,4 +1,4 @@
-import { Stack, styled, Typography } from "@mui/material";
+import { Stack } from "@mui/material";
 import { useEffect, useState } from "react";
 import WhiteTypography from "../../utils/WhiteTypography";
 

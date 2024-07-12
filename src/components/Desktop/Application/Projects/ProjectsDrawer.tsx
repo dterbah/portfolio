@@ -4,7 +4,6 @@ import {
   ListItemButton,
   Stack,
   ListItemText,
-  useTheme,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import CodeIcon from "@mui/icons-material/Code";

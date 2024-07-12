@@ -5,6 +5,7 @@ import persoProjects from "./data/perso.json";
 import proProjects from "./data/pro.json";
 import { useMemo, useState } from "react";
 import ProjectContent from "./ProjectContent";
+import Project from "../../../../types/Project/Project";
 
 interface ProjectsWrapperProps {
   section: ProjectionSectionType;
@@ -12,7 +13,7 @@ interface ProjectsWrapperProps {
 
 const ProjectsWrapper = ({ section }: ProjectsWrapperProps) => {
   const projects = useMemo(() => {
-    return section === "pro" ? proProjects : persoProjects;
+    return (section === "pro" ? proProjects : persoProjects) as any;
   }, [section]);
 
   const projectCategories = Object.keys(projects);
@@ -35,9 +36,11 @@ const ProjectsWrapper = ({ section }: ProjectsWrapperProps) => {
         ))}
       </Tabs>
       <Box>
-        <Grid spacing={2}>
-          {selectedProjects.map((project, index) => (
-            <ProjectContent {...project} key={index} />
+        <Grid container spacing={4}>
+          {selectedProjects.map((project: Project, index: number) => (
+            <Grid item xs={6} key={index}>
+              <ProjectContent {...project} />
+            </Grid>
           ))}
         </Grid>
       </Box>

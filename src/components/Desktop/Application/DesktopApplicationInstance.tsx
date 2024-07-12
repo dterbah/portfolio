@@ -91,10 +91,10 @@ const DesktopApplicationInstance: React.FC<WindowsAppProps> = ({
           </Toolbar>
         </AppBar>
         <Box
-          sx={(theme) => ({
+          sx={{
             height: "calc(100% - 56px)",
             overflowY: "auto",
-          })}
+          }}
         >
           <Content />
         </Box>
