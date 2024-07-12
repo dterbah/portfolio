@@ -1,16 +1,15 @@
 import DesktopApplication from "../../types/application";
 import i18n from "../../i18n";
-import { ElementType } from "react";
-import InfoIcon from "@mui/icons-material/Info";
-import CallIcon from "@mui/icons-material/Call";
-import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
-import EngineeringIcon from "@mui/icons-material/Engineering";
+
+import myProjectPath from "@/assets/applications/my-projects.jpeg";
+import contactPath from "@/assets/applications/contact.webp";
+import cvPath from "@/assets/applications/cv.png";
+import aboutPath from "@/assets/applications/about.jpeg";
 
 type DesktopConfig = {
   [app in DesktopApplication]: {
     name: string;
-    icon: ElementType;
-    color: string;
+    path: string;
   };
 };
 
@@ -18,23 +17,19 @@ const getDesktopConfig = () => {
   const config: DesktopConfig = {
     about: {
       name: i18n.t("desktop.applications.about"),
-      icon: InfoIcon,
-      color: "orange",
+      path: aboutPath,
     },
     contact: {
       name: i18n.t("desktop.applications.contact"),
-      icon: CallIcon,
-      color: "orange",
+      path: contactPath,
     },
     cv: {
       name: i18n.t("desktop.applications.cv"),
-      icon: PictureAsPdfIcon,
-      color: "orange",
+      path: cvPath,
     },
     projects: {
       name: i18n.t("desktop.applications.projects"),
-      icon: EngineeringIcon,
-      color: "orange",
+      path: myProjectPath,
     },
   };
 

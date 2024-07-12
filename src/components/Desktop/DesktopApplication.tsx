@@ -1,17 +1,19 @@
-import { Box, SvgIcon, Typography } from "@mui/material";
-import { ElementType } from "react";
+import { Box, Typography } from "@mui/material";
 import cursor from "@/assets/hover-cursor.png";
+import { DesktopApplication as DesktopApplicationType } from "../../types/application";
 
 interface DesktopApplicationProps {
   name: string;
-  icon: ElementType;
-  color: string;
+  path: string;
+  onApplicationClick: (app: DesktopApplicationType) => void;
+  appType: DesktopApplicationType;
 }
 
 const DesktopApplication = ({
   name,
-  icon: IconComponent,
-  color,
+  path,
+  onApplicationClick,
+  appType,
 }: DesktopApplicationProps) => {
   return (
     <Box
@@ -30,13 +32,9 @@ const DesktopApplication = ({
           backgroundColor: "rgba(255, 255, 255, 0.2)",
         },
       }}
+      onClick={() => onApplicationClick(appType)}
     >
-      <SvgIcon
-        sx={{
-          color,
-        }}
-        component={IconComponent}
-      />
+      <img src={path} width={50} />
       <Typography
         variant="body2"
         sx={{
