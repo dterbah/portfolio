@@ -1,36 +1,64 @@
+import { Box, Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const API_KEY = "0b7eb4fd779a65aee25690d5a190c857";
+import WhiteTypography from "../../utils/WhiteTypography";
+
+const CITY = "Lyon";
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
-  const city = "London"; // Remplacez par la ville de votre choix
+
+  const API_KEY = import.meta.env.VITE_OPEN_WEATHER_API_KEY;
+  const CITY = import.meta.env.VITE_CITY;
 
   useEffect(() => {
     const fetchWeather = async () => {
       try {
         const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=0b7eb4fd779a65aee25690d5a190c857`
+          `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric`
         );
         setWeatherData(response.data);
       } catch (error) {
-        console.error("Error fetching data: ", error);
+        console.error("Error fetching weather data:", error);
       }
     };
 
     fetchWeather();
-  }, [city]);
+  }, []);
 
-  if (!weatherData) return <div>Loading...</div>;
+  if (!weatherData) {
+    return <></>;
+  }
+
+  const { main, weather } = weatherData;
+  const temperature = main.temp;
+  const weatherIcon = weather[0].icon;
+  const description: string = weather[0].description;
+
+  const upperDescription = `${description[0].toUpperCase()}${description.substring(
+    1
+  )}`;
 
   return (
-    <div className="App">
-      <h1>Current Weather in {city}</h1>
-      <p>Temperature: {weatherData.main.temp} °C</p>
-      <p>Weather: {weatherData.weather[0].main}</p>
-      <p>Description: {weatherData.weather[0].description}</p>
-    </div>
+    <Box
+      sx={{
+        display: "flex",
+      }}
+    >
+      <Box>
+        <img
+          src={`https://openweathermap.org/img/wn/${weatherIcon}.png`}
+          alt="Weather Icon"
+        />
+      </Box>
+      <Box>
+        <WhiteTypography variant="body1">{`${temperature}°C`}</WhiteTypography>
+        <Typography variant="body1" sx={{ color: "grey" }}>
+          {upperDescription}
+        </Typography>
+      </Box>
+    </Box>
   );
 };
 

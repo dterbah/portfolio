@@ -1,5 +1,6 @@
 import { Stack, styled, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
+import WhiteTypography from "../../utils/WhiteTypography";
 
 const getCurrentDate = (): string => {
   const currentDate = new Date();
@@ -19,20 +20,14 @@ const getCurrentDate = (): string => {
   return formattedDate;
 };
 
-const WhiteTypography = styled(Typography)({
-  color: "white",
-});
-
 const getFormattedTime = (
   hours: number,
   mins: number,
   seconds: number
 ): string => {
-  let result = "";
   const hoursStr = hours < 10 ? `0${hours}` : `${hours}`;
   const minsStr = mins < 10 ? `0${mins}` : `${mins}`;
   const secondsStr = seconds < 10 ? `0${seconds}` : `${seconds}`;
-
   return `${hoursStr}:${minsStr}:${secondsStr}`;
 };
 
@@ -57,8 +52,8 @@ const Today = () => {
 
   return (
     <Stack>
-      <WhiteTypography variant="body2">{today}</WhiteTypography>
-      <WhiteTypography variant="body2" sx={{ textAlign: "right" }}>
+      <WhiteTypography variant="body1">{today}</WhiteTypography>
+      <WhiteTypography variant="body1" sx={{ textAlign: "right" }}>
         {time}
       </WhiteTypography>
     </Stack>

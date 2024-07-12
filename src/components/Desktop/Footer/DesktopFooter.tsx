@@ -5,7 +5,6 @@ import {
   MenuItem,
   styled,
   TextField,
-  Typography,
 } from "@mui/material";
 import WindowIcon from "@mui/icons-material/Window";
 import cursor from "@/assets/hover-cursor.png";
@@ -17,13 +16,11 @@ import Today from "./Today";
 
 const BoxFooter = styled(Box)({
   backgroundColor: "#080D11",
-  paddingLeft: "2%",
   display: "flex",
   columnGap: "2%",
   paddingTop: "0.5%",
   paddingBottom: "0.5%",
   alignItems: "center",
-  justifyContent: "space-around",
   width: "100%",
 });
 
@@ -47,19 +44,16 @@ const DesktopFooter = () => {
     <BoxFooter>
       <Box
         sx={{
-          display: "flex",
           flex: 1,
-          justifyContent: "flex-start",
         }}
       >
-        {/* <Weather /> */}
-        <Typography color={"white"}>Waiting for openweather</Typography>
+        <Weather />
       </Box>
       <Box
         sx={{
           display: "flex",
+          justifyContent: "flex-start",
           flex: 1,
-          justifyContent: "center",
         }}
       >
         <IconButton
@@ -97,7 +91,14 @@ const DesktopFooter = () => {
         />
       </Box>
 
-      <Box sx={{ display: "flex", flex: 1 }}>
+      <Box
+        sx={{
+          display: "flex",
+          flex: 1,
+          justifyContent: "flex-end",
+          marginRight: 2,
+        }}
+      >
         <Today />
       </Box>
 

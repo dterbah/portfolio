@@ -29,7 +29,7 @@ const WindowsLoading = () => {
   return (
     <WindowLoadingBox spacing={3}>
       <img src={windowsLogo} width={100} height={100} />
-      <Typography variant="h6" color={"white"}>
+      <Typography variant="h4" color={"white"}>
         Chargement du portfolio de Dorian TERBAH {dots}
       </Typography>
     </WindowLoadingBox>
