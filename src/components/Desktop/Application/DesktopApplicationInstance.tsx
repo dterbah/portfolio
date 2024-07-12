@@ -1,4 +1,4 @@
-import React, { ElementType } from "react";
+import React, { ElementType, useState } from "react";
 import Paper from "@mui/material/Paper";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -7,6 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import MinimizeIcon from "@mui/icons-material/Minimize";
 import CropSquareIcon from "@mui/icons-material/CropSquare";
+import FilterNoneIcon from "@mui/icons-material/FilterNone";
 import DesktopApplication from "../../../types/application";
 import getDesktopConfig from "../desktop-config";
 import { Box } from "@mui/material";
@@ -36,6 +37,8 @@ const DesktopApplicationInstance: React.FC<WindowsAppProps> = ({
   pid,
   onClose,
 }) => {
+  const [fullscreen, setFullscreen] = useState(false);
+
   const applicationConfig = getDesktopConfig()[appType];
   const Content = contentMap[appType];
   return (
@@ -47,8 +50,8 @@ const DesktopApplicationInstance: React.FC<WindowsAppProps> = ({
     >
       <Paper
         sx={(theme) => ({
-          width: 800,
-          height: 600,
+          width: fullscreen ? "100vh" : 800,
+          height: fullscreen ? "100vh" : 600,
           position: "relative",
           margin: "50px auto",
           overflow: "hidden",
@@ -74,8 +77,9 @@ const DesktopApplicationInstance: React.FC<WindowsAppProps> = ({
               </IconButton>
               <IconButton
                 sx={(theme) => ({ color: theme.palette.primary.contrastText })}
+                onClick={() => setFullscreen(!fullscreen)}
               >
-                <CropSquareIcon />
+                {fullscreen ? <FilterNoneIcon /> : <CropSquareIcon />}
               </IconButton>
               <IconButton
                 sx={(theme) => ({ color: theme.palette.primary.contrastText })}
