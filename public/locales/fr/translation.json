@@ -11,5 +11,11 @@
       "shutdown": "Eteindre",
       "searchPlaceholder": "Rechercher"
     }
+  },
+  "projects": {
+    "sections": {
+      "pro": "Projets professionnels",
+      "perso": "Projets personnels"
+    }
   }
 }

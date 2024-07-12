@@ -92,7 +92,6 @@ const DesktopApplicationInstance: React.FC<WindowsAppProps> = ({
         </AppBar>
         <Box
           sx={(theme) => ({
-            padding: theme.spacing(2),
             height: "calc(100% - 56px)",
             overflowY: "auto",
           })}
