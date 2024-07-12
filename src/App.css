@@ -1,0 +1,22 @@
+/* App.css */
+.win10-enter {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+.win10-enter-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 1000ms, transform 1000ms;
+}
+
+.win10-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.win10-exit-active {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 1000ms, transform 1000ms;
+}

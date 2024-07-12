@@ -2,9 +2,9 @@ import { Box, styled } from "@mui/material";
 
 import wallpaperPath from "../../assets/pxfuel.jpg";
 import startingMusic from "@/assets/music/start.mp3";
-import DesktopApplication from "../DesktopApplication/DesktopApplication";
+import DesktopApplication from "./DesktopApplication";
 import getDesktopConfig from "./desktop-config";
-import DesktopFooter from "../DesktopFooter/DesktopFooter";
+import DesktopFooter from "./DesktopFooter";
 import { useEffect, useRef } from "react";
 
 const BoxDesktop = styled(Box)({
@@ -34,15 +34,15 @@ const Desktop = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    audioRef.current?.play().catch((err) => {
-      document.addEventListener(
-        "click",
-        () => {
-          //audioRef.current?.play();
-        },
-        { once: true }
-      );
-    });
+    // audioRef.current?.play().catch((err) => {
+    //   document.addEventListener(
+    //     "click",
+    //     () => {
+    //       //audioRef.current?.play();
+    //     },
+    //     { once: true }
+    //   );
+    // });
   }, []);
 
   return (
