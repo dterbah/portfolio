@@ -7,7 +7,7 @@
       "projects": "Mes projets",
       "cv": "Mon CV"
     },
-    "menu": {
+    "footer": {
       "shutdown": "Eteindre",
       "searchPlaceholder": "Rechercher"
     }

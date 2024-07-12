@@ -50,8 +50,8 @@ const DesktopApplicationInstance: React.FC<WindowsAppProps> = ({
     >
       <Paper
         sx={(theme) => ({
-          width: fullscreen ? "100vh" : 800,
-          height: fullscreen ? "100vh" : 600,
+          width: fullscreen ? "100vh" : 1200,
+          height: fullscreen ? "100vh" : 800,
           position: "relative",
           margin: "50px auto",
           overflow: "hidden",

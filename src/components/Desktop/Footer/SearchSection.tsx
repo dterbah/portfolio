@@ -55,7 +55,7 @@ const SearchSection = () => {
           },
         }}
         variant="filled"
-        placeholder={t("desktop.menu.searchPlaceholder")}
+        placeholder={t("desktop.footer.searchPlaceholder")}
       />
 
       <Menu
@@ -73,7 +73,7 @@ const SearchSection = () => {
           },
         }}
       >
-        <MenuItem onClick={shutdown}>{t("desktop.menu.shutdown")}</MenuItem>
+        <MenuItem onClick={shutdown}>{t("desktop.footer.shutdown")}</MenuItem>
       </Menu>
     </>
   );
