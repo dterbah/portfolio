@@ -1,5 +1,4 @@
 import { Stack, styled, Typography } from "@mui/material";
-import { SyncLoader } from "react-spinners";
 
 import windowsLogo from "@/assets/windows.svg";
 import { useEffect, useState } from "react";
@@ -30,8 +29,7 @@ const WindowsLoading = () => {
   return (
     <WindowLoadingBox spacing={3}>
       <img src={windowsLogo} width={100} height={100} />
-      <SyncLoader />
-      <Typography variant="h6">
+      <Typography variant="h6" color={"white"}>
         Chargement du portfolio de Dorian TERBAH {dots}
       </Typography>
     </WindowLoadingBox>
