@@ -4,10 +4,8 @@ import { useEffect, useState } from "react";
 
 import WhiteTypography from "../../utils/WhiteTypography";
 
-const CITY = "Lyon";
-
 const Weather = () => {
-  const [weatherData, setWeatherData] = useState(null);
+  const [weatherData, setWeatherData] = useState<any>(null);
 
   const API_KEY = import.meta.env.VITE_OPEN_WEATHER_API_KEY;
   const CITY = import.meta.env.VITE_CITY;
