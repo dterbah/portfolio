@@ -35,9 +35,17 @@ export const appSlice = createSlice({
       const app = state.apps[index];
       state.apps[index] = { ...app, isOpen: false };
     },
+
+    toggleAppOpen: (state, action: PayloadAction<string>) => {
+      const pid = action.payload;
+      const index = state.apps.findIndex((app) => app.pid === pid);
+      const app = state.apps[index];
+      state.apps[index] = { ...app, isOpen: !app.isOpen };
+    },
   },
 });
 
-export const { createApp, closeApp, minimizeApp } = appSlice.actions;
+export const { createApp, closeApp, minimizeApp, toggleAppOpen } =
+  appSlice.actions;
 
 export default appSlice.reducer;
