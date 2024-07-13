@@ -8,6 +8,8 @@ import { useState } from "react";
 import { DesktopApplication as DesktopApplicationType } from "../../types/application";
 import DesktopApplicationInstance from "./Application/DesktopApplicationInstance";
 import createPID from "../../utils/pid";
+import { useAppDispatch, useAppSelector } from "../../store/store";
+import { closeApp, createApp } from "../../store/slices/appSlice";
 
 const BoxDesktop = styled(Box)({
   backgroundImage: `url(${wallpaperPath})`,
@@ -30,25 +32,18 @@ const BoxApplication = styled(Box)({
 });
 
 const Desktop = () => {
+  const desktopApplications = useAppSelector((state) => state.apps.apps);
+  const openApplications = desktopApplications.filter((app) => app.isOpen);
+  const dispatch = useAppDispatch();
   const config = getDesktopConfig();
   const applications = Object.entries(config);
 
-  const onApplicationClick = (app: DesktopApplicationType) => {
-    setDesktopApplications([
-      ...desktopApplications,
-      { appType: app, pid: createPID() },
-    ]);
+  const onApplicationClick = (appType: DesktopApplicationType) => {
+    dispatch(createApp(appType));
   };
 
-  const [desktopApplications, setDesktopApplications] = useState<
-    { pid: string; appType: DesktopApplicationType }[]
-  >([]);
-
-  const closeApp = (pid: string) => {
-    console.log("close app", pid);
-    setDesktopApplications(
-      desktopApplications.filter((app) => app.pid !== pid)
-    );
+  const onApplicationClosed = (pid: string) => {
+    dispatch(closeApp(pid));
   };
 
   return (
@@ -69,13 +64,13 @@ const Desktop = () => {
         <DesktopFooter />
       </Box>
       <Box sx={{ position: "absolute", zIndex: "1" }}>
-        {desktopApplications.map((app, index) => {
+        {openApplications.map((app, index) => {
           return (
             <DesktopApplicationInstance
               pid={app.pid}
               appType={app.appType}
               key={index}
-              onClose={closeApp}
+              onClose={onApplicationClosed}
             />
           );
         })}

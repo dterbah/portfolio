@@ -18,6 +18,8 @@ import CV from "./CV/CV";
 import About from "./About/About";
 import Contact from "./Contact/Contact";
 import ProjectsView from "./Projects/ProjectsView";
+import { useAppDispatch } from "../../../store/store";
+import { minimizeApp } from "../../../store/slices/appSlice";
 
 interface WindowsAppProps {
   appType: DesktopApplication;
@@ -39,6 +41,7 @@ const DesktopApplicationInstance: React.FC<WindowsAppProps> = ({
 }) => {
   const [fullscreen, setFullscreen] = useState(false);
   const [defaultPosition, setDefaultPosition] = useState({ x: 0, y: 0 });
+  const dispatch = useAppDispatch();
   const applicationConfig = getDesktopConfig()[appType];
   const Content = contentMap[appType];
   const paperRef = useRef<HTMLDivElement | null>(null);
@@ -61,6 +64,10 @@ const DesktopApplicationInstance: React.FC<WindowsAppProps> = ({
       window.removeEventListener("resize", updateDefaultPosition);
     };
   }, [fullscreen]);
+
+  const minimize = () => {
+    dispatch(minimizeApp(pid));
+  };
 
   return (
     <Draggable defaultPosition={defaultPosition} handle=".draggable-handle">
@@ -91,6 +98,7 @@ const DesktopApplicationInstance: React.FC<WindowsAppProps> = ({
             <Box sx={{ marginLeft: "auto" }}>
               <IconButton
                 sx={(theme) => ({ color: theme.palette.primary.contrastText })}
+                onClick={() => minimize()}
               >
                 <MinimizeIcon />
               </IconButton>

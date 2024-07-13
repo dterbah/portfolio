@@ -1,17 +1,24 @@
 import { Box } from "@mui/material";
 import ProjectsDrawer from "./ProjectsDrawer";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import ProjectsWrapper from "./ProjectsWrapper";
 
 type ProjectSectionType = "pro" | "perso";
 
 const Projects = () => {
   const [section, setSection] = useState<ProjectSectionType>("perso");
+  const ref = useRef();
 
   return (
-    <Box display="flex">
+    <Box display="flex" ref={ref}>
       <ProjectsDrawer section={section} onSectionChanged={setSection} />
-      <ProjectsWrapper section={section} />
+      <Box
+        sx={{
+          ml: 2,
+        }}
+      >
+        <ProjectsWrapper section={section} />
+      </Box>
     </Box>
   );
 };
