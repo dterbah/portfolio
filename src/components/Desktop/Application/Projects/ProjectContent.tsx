@@ -85,7 +85,7 @@ const ProjectContent = ({
               <IconButton
                 aria-label="share"
                 onClick={() =>
-                  window.open(webLink, "_blank", "rel=noopener noreferrer")
+                  window.open(webLink, "_blank").focus()
                 }
               >
                 <LinkIcon />
