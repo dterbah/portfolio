@@ -36,7 +36,7 @@ const ProjectsWrapper = ({ section }: ProjectsWrapperProps) => {
         ))}
       </Tabs>
       <Box>
-        <Grid container spacing={4}>
+        <Grid container spacing={2}>
           {selectedProjects.map((project: Project, index: number) => (
             <Grid item xs={6} key={index}>
               <ProjectContent {...project} />

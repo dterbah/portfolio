@@ -13,6 +13,8 @@
     }
   },
   "projects": {
+    "seeCode": "Voir le code source",
+    "seeApp": "Accéder à l'application",
     "sections": {
       "pro": {
         "title": "Projets professionnels"

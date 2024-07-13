@@ -2,25 +2,64 @@
   "Golang": [
     {
       "title": "Go Data Structure",
-      "content": "Un peu de contenu",
+      "content": "Ce projet a pour but de mettre à disposition une collection de structure de données complexes en Go.",
       "link": "https://github.com/dterbah/gods",
       "imageLink": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230706095706/intro-data-structure-%E2%80%93-1.png",
-      "date": "Juin 2024"
+      "date": "Juin 2024",
+      "skills": ["Go"]
     },
     {
       "title": "Go Package Manager",
-      "content": "Un peu de contenu",
+      "content": "Ce projet est inspriré de NPM. Il permet de créer, manager et mettre à jour facilement un projet en Go.",
       "link": "https://github.com/dterbah/gopm",
       "imageLink": "https://raw.githubusercontent.com/dterbah/gopm/main/assets/logo.webp",
-      "date": "Juillet 2024"
+      "date": "Juillet 2024",
+      "skills": ["Go"]
     },
     {
-      "title": "Go Package Manager",
-      "content": "Un peu de contenu",
-      "link": "https://github.com/dterbah/gopm",
-      "imageLink": "https://raw.githubusercontent.com/dterbah/gopm/main/assets/logo.webp",
-      "date": "Juillet 2024"
+      "title": "Go-Test-Gen",
+      "content": "Il s'agit d'un générateur de templates de tests pour un fichier/projet écrit en Go.",
+      "link": "https://github.com/dterbah/go-test-gen",
+      "imageLink": "https://raw.githubusercontent.com/dterbah/go-test-gen/main/assets/logo.webp",
+      "date": "Juin 2024",
+      "skills": ["Go"]
+    },
+    {
+      "title": "Go-Logic",
+      "content": "Ce projet permet de résoudre des expressions booléennes, de les simplifier, de générer un graphe décrivant l'expression et des tables de vérités.",
+      "link": "https://github.com/dterbah/go-logic?tab=readme-ov-file",
+      "imageLink": "https://raw.githubusercontent.com/dterbah/go-logic/main/assets/logo.webp",
+      "date": "Juillet 2024",
+      "skills": ["Go"]
     }
   ],
-  "Web": []
+  "Web": [
+    {
+      "title": "Konect",
+      "content": "Ce logiciel de NoCode permet d'assembler des briques pour créer des processus complexes.",
+      "link": "https://github.com/KonectTeam/konect",
+      "imageLink": "https://avatars.githubusercontent.com/u/126210325?s=200&v=4",
+      "date": "Avril 2023",
+      "webLink": "https://konect-app.netlify.app/",
+      "skills": ["Typescript", "VueJS", "Python", "Flask"]
+    },
+    {
+      "title": "Data-France-Visualization",
+      "content": "Application qui permet de visualiser des données concernant la France (consommation, prix, ...)",
+      "link": "https://github.com/dterbah/Data-France-Visualization",
+      "imageLink": "https://www.opendatasoft.com/wp-content/uploads/2022/08/Blog-thumbnail.png",
+      "date": "Mars 2023",
+      "webLink": "https://data-france-visualization.netlify.app/",
+      "skills": ["Typescript", "VueJS"]
+    },
+    {
+      "title": "Pokedex",
+      "content": "Application listant des pokemons avec leurs statistiques, leurs évolutions et leurs différentes formes à l'instar d'un pokédex.",
+      "link": "https://github.com/dterbah/pokemon-api",
+      "imageLink": "https://raw.githubusercontent.com/dterbah/pokemon-api/master/src/assets/logo.png",
+      "date": "Novembre 2019",
+      "webLink": "https://dterbah-pokedex.netlify.app",
+      "skills": ["Javascript", "VueJS"]
+    }
+  ]
 }

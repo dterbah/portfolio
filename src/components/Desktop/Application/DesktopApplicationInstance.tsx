@@ -1,4 +1,4 @@
-import React, { ElementType, useState } from "react";
+import React, { ElementType, useState, useEffect, useRef } from "react";
 import Paper from "@mui/material/Paper";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
@@ -38,22 +38,41 @@ const DesktopApplicationInstance: React.FC<WindowsAppProps> = ({
   onClose,
 }) => {
   const [fullscreen, setFullscreen] = useState(false);
-
+  const [defaultPosition, setDefaultPosition] = useState({ x: 0, y: 0 });
   const applicationConfig = getDesktopConfig()[appType];
   const Content = contentMap[appType];
+  const paperRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const updateDefaultPosition = () => {
+      if (paperRef.current) {
+        const { innerWidth, innerHeight } = window;
+        const { offsetWidth, offsetHeight } = paperRef.current;
+        setDefaultPosition({
+          x: (innerWidth - offsetWidth) / 2,
+          y: (innerHeight - offsetHeight) / 2,
+        });
+      }
+    };
+
+    updateDefaultPosition();
+    window.addEventListener("resize", updateDefaultPosition);
+    return () => {
+      window.removeEventListener("resize", updateDefaultPosition);
+    };
+  }, [fullscreen]);
+
   return (
-    <Draggable
-      defaultPosition={{
-        x: 200,
-        y: 200,
-      }}
-    >
+    <Draggable defaultPosition={defaultPosition} handle=".draggable-handle">
       <Paper
+        ref={paperRef}
         sx={(theme) => ({
-          width: fullscreen ? "100vh" : 1200,
+          width: fullscreen ? "100vw" : 1200,
           height: fullscreen ? "100vh" : 800,
-          position: "relative",
-          margin: "50px auto",
+          position: fullscreen ? "fixed" : "relative",
+          top: fullscreen ? 0 : "auto",
+          left: fullscreen ? 0 : "auto",
+          margin: fullscreen ? 0 : "50px auto",
           overflow: "hidden",
           boxShadow: theme.shadows[5],
         })}
@@ -65,7 +84,7 @@ const DesktopApplicationInstance: React.FC<WindowsAppProps> = ({
             color: theme.palette.primary.contrastText,
           })}
         >
-          <Toolbar>
+          <Toolbar className="draggable-handle">
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               {applicationConfig.name}
             </Typography>
