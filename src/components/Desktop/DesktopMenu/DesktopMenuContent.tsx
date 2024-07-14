@@ -1,7 +1,7 @@
 import { Box, Stack } from "@mui/material";
 import getDesktopConfig from "../desktop-config";
 import ApplicationShortcut from "../ApplicationShortcut";
-import { useAppDispatch } from "../../../store/store";
+import { useAppDispatch, useAppSelector } from "../../../store/store";
 import { createApp } from "../../../store/slices/appSlice";
 import DesktopApplication from "../../../types/application";
 import WhiteTypography from "../../utils/WhiteTypography";
@@ -10,7 +10,10 @@ import { toggleDesktopMenu } from "../../../store/slices/desktopSlice";
 
 const DesktopMenuContent = () => {
   const { t } = useTranslation();
-  const applications = Object.entries(getDesktopConfig());
+  const search = useAppSelector((state) => state.desktopMenu.search);
+  const applications = Object.entries(getDesktopConfig()).filter((app) =>
+    app[1].name.startsWith(search)
+  );
   const dispatch = useAppDispatch();
 
   const onApplicationSelected = (appType: DesktopApplication) => {
