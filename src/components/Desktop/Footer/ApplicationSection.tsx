@@ -1,9 +1,8 @@
 import { Box } from "@mui/material";
 import { useAppDispatch, useAppSelector } from "../../../store/store";
-import cursor from "@/assets/hover-cursor.png";
 import getDesktopConfig from "../desktop-config";
-import WhiteTypography from "../../utils/WhiteTypography";
 import { toggleAppOpen } from "../../../store/slices/appSlice";
+import ApplicationShortcut from "../ApplicationShortcut";
 
 const ApplicationSection = () => {
   const applications = useAppSelector((state) => state.apps.apps);
@@ -19,26 +18,14 @@ const ApplicationSection = () => {
       {applications.map((app, index) => {
         const { path, name } = config[app.appType];
         return (
-          <Box
+          <ApplicationShortcut
             key={index}
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              flexDirection: "column",
-              alignContent: "center",
-              alignItems: "center",
-              padding: 1,
-              backgroundColor: app.isOpen ? "rgba(255, 255, 255, 0.2)" : "none",
-              "&:hover": {
-                cursor: `url(${cursor}), auto`,
-                backgroundColor: "rgba(255, 255, 255, 0.2)",
-              },
-            }}
+            imgWidth={25}
+            name={name}
+            variant="caption"
+            path={path}
             onClick={() => toggleApp(app.pid)}
-          >
-            <img src={path} width={25} />
-            <WhiteTypography variant="caption">{name}</WhiteTypography>
-          </Box>
+          />
         );
       })}
     </Box>
