@@ -1,25 +1,17 @@
-import { IconButton, Menu, MenuItem, TextField } from "@mui/material";
+import { IconButton, TextField } from "@mui/material";
 
 import cursor from "@/assets/hover-cursor.png";
-import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Search } from "@mui/icons-material";
 import WindowIcon from "@mui/icons-material/Window";
+import { useAppDispatch } from "../../../store/store";
+import { toggleDesktopMenu } from "../../../store/slices/desktopSlice";
 
 const SearchSection = () => {
-  const [anchorWindows, setAnchorWindows] = useState<null | HTMLElement>(null);
   const { t } = useTranslation();
-  const open = Boolean(anchorWindows);
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    setAnchorWindows(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorWindows(null);
-  };
-
-  const shutdown = () => {
-    window.close();
+  const dispatch = useAppDispatch();
+  const handleClick = () => {
+    dispatch(toggleDesktopMenu());
   };
 
   return (
@@ -57,24 +49,6 @@ const SearchSection = () => {
         variant="filled"
         placeholder={t("desktop.footer.searchPlaceholder")}
       />
-
-      <Menu
-        id="menu-windows"
-        anchorEl={anchorWindows}
-        open={open}
-        onClose={handleClose}
-        MenuListProps={{
-          "aria-labelledby": "basic-button",
-        }}
-        sx={{
-          "& .MuiPaper-root": {
-            backgroundColor: "#2D2D2D",
-            color: "white",
-          },
-        }}
-      >
-        <MenuItem onClick={shutdown}>{t("desktop.footer.shutdown")}</MenuItem>
-      </Menu>
     </>
   );
 };

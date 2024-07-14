@@ -1,4 +1,4 @@
-import { Box, styled } from "@mui/material";
+import { Box, Stack, styled } from "@mui/material";
 
 import wallpaperPath from "../../assets/pxfuel.jpg";
 import DesktopApplication from "./DesktopApplication";
@@ -10,6 +10,7 @@ import DesktopApplicationInstance from "./Application/DesktopApplicationInstance
 import createPID from "../../utils/pid";
 import { useAppDispatch, useAppSelector } from "../../store/store";
 import { closeApp, createApp } from "../../store/slices/appSlice";
+import DesktopMenu from "./DesktopMenu/DesktopMenu";
 
 const BoxDesktop = styled(Box)({
   backgroundImage: `url(${wallpaperPath})`,
@@ -34,6 +35,7 @@ const BoxApplication = styled(Box)({
 const Desktop = () => {
   const desktopApplications = useAppSelector((state) => state.apps.apps);
   const openApplications = desktopApplications.filter((app) => app.isOpen);
+  const isDesktopMenuOpen = useAppSelector((state) => state.desktopMenu.isOpen);
   const dispatch = useAppDispatch();
   const config = getDesktopConfig();
   const applications = Object.entries(config);
@@ -60,9 +62,37 @@ const Desktop = () => {
           );
         })}
       </BoxApplication>
-      <Box>
-        <DesktopFooter />
-      </Box>
+      <Stack
+        direction="column"
+        sx={{
+          height: "100%",
+          display: "flex",
+        }}
+      >
+        {isDesktopMenuOpen && (
+          <Box
+            sx={{
+              height: "60%",
+              flex: "10 1 auto",
+              width: "100%",
+            }}
+          >
+            <DesktopMenu />
+          </Box>
+        )}
+
+        <Box
+          sx={{
+            flex: "1 1 auto",
+            display: "flex",
+            justifyContent: "flex-end",
+            alignItems: "flex-end",
+            marginTop: "auto",
+          }}
+        >
+          <DesktopFooter />
+        </Box>
+      </Stack>
       <Box sx={{ position: "absolute", zIndex: "1" }}>
         {openApplications.map((app, index) => {
           return (

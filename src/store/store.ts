@@ -2,11 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import themeReducer from "./slices/themeSlice";
 import appReducer from "./slices/appSlice";
+import desktopMenuReducer from "./slices/desktopSlice";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 export const store = configureStore({
   reducer: {
     theme: themeReducer,
+    desktopMenu: desktopMenuReducer,
     apps: appReducer,
   },
 });
