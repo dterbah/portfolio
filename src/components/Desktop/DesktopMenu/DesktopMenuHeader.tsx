@@ -2,6 +2,7 @@ import { Box, IconButton } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { useAppDispatch } from "../../../store/store";
 import { toggleDesktopMenu } from "../../../store/slices/desktopSlice";
+import SearchTextField from "../../utils/SearchTextField";
 
 const DesktopMenuHeader = () => {
   const dispatch = useAppDispatch();
@@ -10,13 +11,13 @@ const DesktopMenuHeader = () => {
     <Box
       sx={{
         height: "15%",
+        pt: 1,
         width: "90%",
         margin: "auto",
-        display: "flex",
         justifyContent: "space-between",
       }}
     >
-      <span></span>
+      <SearchTextField />
       <IconButton
         sx={{ color: "white" }}
         size="large"

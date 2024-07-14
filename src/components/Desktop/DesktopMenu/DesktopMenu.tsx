@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import DesktopMenuFooter from "./DesktopMenuFooter";
 import DesktopMenuHeader from "./DesktopMenuHeader";
+import DesktopMenuContent from "./DesktopMenuContent";
 
 const DesktopMenu = () => {
   return (
@@ -22,13 +23,7 @@ const DesktopMenu = () => {
         }}
       >
         <DesktopMenuHeader />
-        <Box
-          sx={{
-            height: "60%",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        ></Box>
+        <DesktopMenuContent />
         <DesktopMenuFooter />
       </Box>
     </Box>
