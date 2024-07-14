@@ -1,5 +1,6 @@
-import { Box, Button, IconButton } from "@mui/material";
-import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
+import { Box } from "@mui/material";
+import DesktopMenuFooter from "./DesktopMenuFooter";
+import DesktopMenuHeader from "./DesktopMenuHeader";
 
 const DesktopMenu = () => {
   return (
@@ -20,27 +21,15 @@ const DesktopMenu = () => {
           borderRadius: 4,
         }}
       >
+        <DesktopMenuHeader />
         <Box
           sx={{
-            height: "75%",
+            height: "60%",
             alignItems: "center",
             justifyContent: "center",
           }}
         ></Box>
-        <Box
-          sx={{
-            height: "25%",
-            width: "90%",
-            margin: "auto",
-            display: "flex",
-            justifyContent: "space-between",
-          }}
-        >
-          <span></span>
-          <IconButton sx={{ color: "white" }} size="large">
-            <PowerSettingsNewIcon />
-          </IconButton>
-        </Box>
+        <DesktopMenuFooter />
       </Box>
     </Box>
   );

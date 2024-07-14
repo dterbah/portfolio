@@ -73,9 +73,7 @@ const ProjectContent = ({
             {link && (
               <IconButton
                 aria-label="share"
-                onClick={() =>
-                  window.open(link, "_blank", "rel=noopener noreferrer")
-                }
+                onClick={() => window.open(link, "_blank")?.focus()}
               >
                 <CodeIcon />
                 <Typography variant="body1">{t("projects.seeCode")}</Typography>
@@ -84,9 +82,7 @@ const ProjectContent = ({
             {webLink && (
               <IconButton
                 aria-label="share"
-                onClick={() =>
-                  window.open(webLink, "_blank").focus()
-                }
+                onClick={() => window.open(webLink, "_blank")?.focus()}
               >
                 <LinkIcon />
                 <Typography variant="body1">{t("projects.seeApp")}</Typography>
