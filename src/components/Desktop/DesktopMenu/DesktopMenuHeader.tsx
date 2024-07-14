@@ -10,14 +10,16 @@ const DesktopMenuHeader = () => {
   return (
     <Box
       sx={{
-        height: "15%",
-        pt: 1,
+        height: "10%",
+        pt: 2,
         width: "90%",
         margin: "auto",
         justifyContent: "space-between",
+        display: "flex",
+        pb: 2,
       }}
     >
-      <SearchTextField />
+      <SearchTextField width="90%" />
       <IconButton
         sx={{ color: "white" }}
         size="large"
