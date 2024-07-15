@@ -4,7 +4,7 @@
       "title": "Go Data Structure",
       "content": "Ce projet a pour but de mettre à disposition une collection de structure de données complexes en Go.",
       "link": "https://github.com/dterbah/gods",
-      "imageLink": "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230706095706/intro-data-structure-%E2%80%93-1.png",
+      "imageLink": "https://raw.githubusercontent.com/dterbah/gods/main/assets/logo.webp",
       "date": "Juin 2024",
       "skills": ["Go"]
     },

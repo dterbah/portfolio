@@ -14,7 +14,12 @@ const ApplicationSection = () => {
   };
 
   return (
-    <Box display="flex">
+    <Box
+      display="flex"
+      sx={{
+        gap: 2,
+      }}
+    >
       {applications.map((app, index) => {
         const { path, name } = config[app.appType];
         return (
