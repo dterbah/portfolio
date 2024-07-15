@@ -2,7 +2,10 @@ import { Search } from "@mui/icons-material";
 import { TextField } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import { useAppDispatch, useAppSelector } from "../../store/store";
-import { updateSearch } from "../../store/slices/desktopSlice";
+import {
+  toggleDesktopMenu,
+  updateSearch,
+} from "../../store/slices/desktopSlice";
 
 interface SearchTextFieldProps {
   width?: string;
@@ -14,6 +17,7 @@ const SearchTextField = ({ width }: SearchTextFieldProps) => {
   const dispatch = useAppDispatch();
 
   const onSearchChanged = (newSearch: string) => {
+    dispatch(toggleDesktopMenu());
     dispatch(updateSearch(newSearch));
   };
 
@@ -32,6 +36,7 @@ const SearchTextField = ({ width }: SearchTextFieldProps) => {
           color: "white",
         },
         width: width || "90%",
+        height: "100%",
       }}
       placeholder={t("desktop.footer.searchPlaceholder")}
     />

@@ -1,7 +1,15 @@
 import { Box, IconButton } from "@mui/material";
 import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
+import { useAppDispatch } from "../../../store/store";
+import { changeScreen } from "../../../store/slices/windowSlice";
 
 const DesktopMenuFooter = () => {
+  const dispatch = useAppDispatch();
+
+  const handleOnClose = () => {
+    dispatch(changeScreen("exiting"));
+  };
+
   return (
     <Box
       sx={{
@@ -13,7 +21,7 @@ const DesktopMenuFooter = () => {
       }}
     >
       <span></span>
-      <IconButton sx={{ color: "white" }} size="large">
+      <IconButton sx={{ color: "white" }} size="large" onClick={handleOnClose}>
         <PowerSettingsNewIcon />
       </IconButton>
     </Box>

@@ -6,9 +6,10 @@ import i18n from "./i18n";
 import cursor from "@/assets/cursor.png";
 import { Box, createTheme, ThemeProvider } from "@mui/material";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import WindowsLoading from "./components/WindowLoading/WindowLoading";
 import { Provider } from "react-redux";
-import { store, useAppSelector } from "./store/store";
+import { store, useAppDispatch, useAppSelector } from "./store/store";
+import { changeScreen, WindowScreen } from "./store/slices/windowSlice";
+import WindowComponent from "./components/Window/Window";
 
 const IntermediateComponent = () => <div className="intermediate"></div>;
 
@@ -24,9 +25,20 @@ const lightTheme = createTheme({
   },
 });
 
+const getScreen = (screen: WindowScreen) => {
+  if (screen == "running") {
+    return <Desktop />;
+  }
+  return <WindowComponent type={screen} />;
+};
+
 const App = () => {
   const [i18NInit, setI18nInit] = useState<boolean>(false);
-  const [currentElement, setCurrentElement] = useState(<WindowsLoading />);
+  const screen = useAppSelector((state) => state.window.screen);
+  const dispatch = useAppDispatch();
+  const currentElement = useMemo(() => {
+    return getScreen(screen);
+  }, [screen]);
   const [showIntermediate, setShowIntermediate] = useState(false);
 
   const themeMode = useAppSelector((state) => state.theme.theme);
@@ -42,13 +54,12 @@ const App = () => {
 
     i18n.on("initialized", handleInitialized);
 
-    // Show the intermediate component before switching to Desktop
     const intermediateTimeout = setTimeout(() => {
       setShowIntermediate(true);
-    }, 2500); // Show intermediate component just before transition
+    }, 2500);
 
     const id = setTimeout(() => {
-      setCurrentElement(<Desktop />);
+      dispatch(changeScreen("running"));
       setShowIntermediate(false);
     }, 3000);
 
@@ -76,7 +87,9 @@ const App = () => {
               <TransitionGroup style={{ height: "100%" }}>
                 <CSSTransition
                   key={
-                    showIntermediate ? "intermediate" : currentElement.type.name
+                    showIntermediate
+                      ? "intermediate"
+                      : currentElement?.type.name
                   }
                   timeout={500}
                   classNames="win10"

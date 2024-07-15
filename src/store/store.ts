@@ -3,6 +3,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import themeReducer from "./slices/themeSlice";
 import appReducer from "./slices/appSlice";
 import desktopMenuReducer from "./slices/desktopSlice";
+import windowReducer from "./slices/windowSlice";
+
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 export const store = configureStore({
@@ -10,6 +12,7 @@ export const store = configureStore({
     theme: themeReducer,
     desktopMenu: desktopMenuReducer,
     apps: appReducer,
+    window: windowReducer,
   },
 });
 

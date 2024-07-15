@@ -10,7 +10,6 @@ const DesktopMenuHeader = () => {
   return (
     <Box
       sx={{
-        height: "10%",
         pt: 2,
         width: "90%",
         margin: "auto",

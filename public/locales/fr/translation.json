@@ -1,5 +1,7 @@
 {
   "welcome": "Bienvenue",
+  "loading": "Chargement du portfolio de Dorian TERBAH",
+  "exiting": "Arrêt du portfolio de Dorian TERBAH en cours",
   "desktop": {
     "applications": {
       "about": "A propos",

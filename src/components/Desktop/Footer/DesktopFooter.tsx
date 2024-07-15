@@ -5,9 +5,9 @@ import { useAppDispatch, useAppSelector } from "../../../store/store";
 import { useState } from "react";
 import Today from "./Today";
 import { setTheme } from "../../../store/slices/themeSlice";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
 import ApplicationSection from "./ApplicationSection";
+import HighlightIcon from "@mui/icons-material/Highlight";
+import FlashlightOffIcon from "@mui/icons-material/FlashlightOff";
 
 const BoxFooter = styled(Box)({
   backgroundColor: "#080D11",
@@ -61,12 +61,12 @@ const DesktopFooter = () => {
         <Box sx={{ display: "flex" }}>
           <IconButton onClick={() => switchTheme()}>
             {darkMode && (
-              <LightModeIcon
+              <HighlightIcon
                 sx={(theme) => ({ color: theme.palette.primary.main })}
               />
             )}
             {!darkMode && (
-              <DarkModeIcon
+              <FlashlightOffIcon
                 sx={(theme) => ({ color: theme.palette.primary.main })}
               />
             )}
