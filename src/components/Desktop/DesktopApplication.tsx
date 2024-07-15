@@ -1,5 +1,3 @@
-import { Box, Typography } from "@mui/material";
-import cursor from "@/assets/hover-cursor.png";
 import { DesktopApplication as DesktopApplicationType } from "../../types/application";
 import ApplicationShortcut from "./ApplicationShortcut";
 
