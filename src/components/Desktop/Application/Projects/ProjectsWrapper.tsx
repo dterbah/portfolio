@@ -29,7 +29,7 @@ const ProjectsWrapper = ({ section }: ProjectsWrapperProps) => {
   };
 
   return (
-    <Box>
+    <>
       <Tabs value={tab} onChange={handleTabChanged}>
         {projectCategories.map((projectCategory, index) => (
           <Tab label={projectCategory} key={index} />
@@ -44,7 +44,7 @@ const ProjectsWrapper = ({ section }: ProjectsWrapperProps) => {
           ))}
         </Grid>
       </Box>
-    </Box>
+    </>
   );
 };
 

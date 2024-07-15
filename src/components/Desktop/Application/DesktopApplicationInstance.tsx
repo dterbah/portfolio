@@ -10,7 +10,7 @@ import CropSquareIcon from "@mui/icons-material/CropSquare";
 import FilterNoneIcon from "@mui/icons-material/FilterNone";
 import DesktopApplication from "../../../types/application";
 import getDesktopConfig from "../desktop-config";
-import { Box } from "@mui/material";
+import { Box, CssBaseline } from "@mui/material";
 import Draggable from "react-draggable";
 import { CSSTransition } from "react-transition-group";
 
@@ -93,11 +93,13 @@ const DesktopApplicationInstance: React.FC<WindowsAppProps> = ({
             boxShadow: theme.shadows[5],
           })}
         >
+          <CssBaseline />
           <AppBar
-            position="static"
+            position="fixed"
             sx={(theme) => ({
               backgroundColor: theme.palette.primary.main,
               color: theme.palette.primary.contrastText,
+              zIndex: (theme) => theme.zIndex.drawer + 1,
             })}
           >
             <Toolbar className="draggable-handle">

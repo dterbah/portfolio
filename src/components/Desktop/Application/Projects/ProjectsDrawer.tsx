@@ -2,8 +2,11 @@ import {
   ListItem,
   ListItemIcon,
   ListItemButton,
-  Stack,
   ListItemText,
+  Drawer,
+  Toolbar,
+  List,
+  Box,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import CodeIcon from "@mui/icons-material/Code";
@@ -36,29 +39,24 @@ const ProjectsDrawer = ({ section, onSectionChanged }: ProjectsDrawerProps) => {
     },
   ];
 
+  const drawerWidth = 240;
+
   return (
-    <Stack
-      sx={(theme) => ({
-        width: "25%",
-        height: "100vh",
-        borderRight: `1px solid ${theme.palette.grey[400]}`,
-      })}
+    <Drawer
+      variant="permanent"
+      sx={{
+        width: drawerWidth,
+        flexShrink: 0,
+        [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: "border-box" },
+      }}
     >
-      {drawerSections.map((drawerSection, index) => (
-        <ListItem
-          key={index}
-          disablePadding
-          sx={(theme) => ({
-            color:
-              section === drawerSection.section
-                ? theme.palette.primary.main
-                : "",
-          })}
-        >
-          <ListItemButton
-            onClick={() => onSectionChanged(drawerSection.section)}
-          >
-            <ListItemIcon
+      <Toolbar />
+      <Box sx={{ overflow: "auto" }}>
+        <List>
+          {drawerSections.map((drawerSection, index) => (
+            <ListItem
+              key={index}
+              disablePadding
               sx={(theme) => ({
                 color:
                   section === drawerSection.section
@@ -66,13 +64,62 @@ const ProjectsDrawer = ({ section, onSectionChanged }: ProjectsDrawerProps) => {
                     : "",
               })}
             >
-              {drawerSection.icon}
-            </ListItemIcon>
-            <ListItemText primary={drawerSection.name} />
-          </ListItemButton>
-        </ListItem>
-      ))}
-    </Stack>
+              <ListItemButton
+                onClick={() => onSectionChanged(drawerSection.section)}
+              >
+                <ListItemIcon
+                  sx={(theme) => ({
+                    color:
+                      section === drawerSection.section
+                        ? theme.palette.primary.main
+                        : "",
+                  })}
+                >
+                  {drawerSection.icon}
+                </ListItemIcon>
+                <ListItemText primary={drawerSection.name} />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+      </Box>
+    </Drawer>
+    // <Stack
+    //   sx={(theme) => ({
+    //     width: "25%",
+    //     height: "100%",
+    //     borderRight: `1px solid ${theme.palette.grey[400]}`,
+    //   })}
+    // >
+    //   {drawerSections.map((drawerSection, index) => (
+    //     <ListItem
+    //       key={index}
+    //       disablePadding
+    //       sx={(theme) => ({
+    //         color:
+    //           section === drawerSection.section
+    //             ? theme.palette.primary.main
+    //             : "",
+    //       })}
+    //     >
+    //       <ListItemButton
+    //         onClick={() => onSectionChanged(drawerSection.section)}
+    //       >
+    //         <ListItemIcon
+    //           sx={(theme) => ({
+    //             color:
+    //               section === drawerSection.section
+    //                 ? theme.palette.primary.main
+    //                 : "",
+    //           })}
+    //         >
+    //           {drawerSection.icon}
+    //         </ListItemIcon>
+    //         <ListItemText primary={drawerSection.name} />
+    //       </ListItemButton>
+    //     </ListItem>
+    //   ))}
+    // </Stack>
   );
 };
 
