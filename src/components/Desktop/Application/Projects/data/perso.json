@@ -39,18 +39,18 @@
       "content": "Ce logiciel de NoCode permet d'assembler des briques pour créer des processus complexes.",
       "link": "https://github.com/KonectTeam/konect",
       "imageLink": "https://avatars.githubusercontent.com/u/126210325?s=200&v=4",
-      "date": "Avril 2023",
+      "date": "Avril 2023 - Juillet 2023",
       "webLink": "https://konect-app.netlify.app/",
-      "skills": ["Typescript", "VueJS", "Python", "Flask"]
+      "skills": ["Typescript", "VueJS", "Python", "Flask", "Rest"]
     },
     {
       "title": "Data-France-Visualization",
-      "content": "Application qui permet de visualiser des données concernant la France (consommation, prix, ...)",
+      "content": "Application qui permet de visualiser des données concernant la France (consommation, prix, ...).",
       "link": "https://github.com/dterbah/Data-France-Visualization",
       "imageLink": "https://www.opendatasoft.com/wp-content/uploads/2022/08/Blog-thumbnail.png",
       "date": "Mars 2023",
       "webLink": "https://data-france-visualization.netlify.app/",
-      "skills": ["Typescript", "VueJS"]
+      "skills": ["Typescript", "VueJS", "Rest"]
     },
     {
       "title": "Pokedex",
@@ -59,7 +59,7 @@
       "imageLink": "https://raw.githubusercontent.com/dterbah/pokemon-api/master/src/assets/logo.png",
       "date": "Novembre 2019",
       "webLink": "https://dterbah-pokedex.netlify.app",
-      "skills": ["Javascript", "VueJS"]
+      "skills": ["Javascript", "VueJS", "Rest"]
     }
   ]
 }

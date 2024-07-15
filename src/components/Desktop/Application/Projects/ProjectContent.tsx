@@ -15,6 +15,17 @@ import LinkIcon from "@mui/icons-material/Link";
 import { useTranslation } from "react-i18next";
 import SkillsContainer from "./Skill/SkillsContainer";
 
+import osirisLogo from "@/assets/projects/logo/osiris.svg";
+import hevaLogo from "@/assets/projects/logo/heva.svg";
+import apolloLogo from "@/assets/projects/logo/apollo.png";
+import placeholderLogo from "@/assets/projects/logo/placeholder.svg";
+
+const logoMaps = new Map<string, string>([
+  ["osiris", osirisLogo],
+  ["heva", hevaLogo],
+  ["apollo", apolloLogo],
+  ["placeholder", placeholderLogo],
+]);
 interface ProjectContentProps {
   title: string;
   content: string;
@@ -45,12 +56,17 @@ const ProjectContent = ({
   webLink,
 }: ProjectContentProps) => {
   const { t } = useTranslation();
+
+  const computedImageLink = logoMaps.has(imageLink)
+    ? logoMaps.get(imageLink)
+    : imageLink;
+
   return (
     <StyledCard>
       <CardHeader title={title} subheader={date} />
       <CardMedia
         component="img"
-        image={imageLink}
+        image={computedImageLink}
         sx={{
           height: 400,
           objectFit: "cover",

@@ -1,4 +1,54 @@
 {
-  "Heva": {},
-  "Ciril Group": {}
+  "Heva": [
+    {
+      "title": "Osiris",
+      "content": "Cette application permet de simuler la contribution à la clause de sauvegarde d'entreprises vendant du matériel médical pour le SNITEM.",
+      "imageLink": "osiris",
+      "date": "Septembre 2023 - Février 2024",
+      "skills": ["React", "Typescript", "Redux", "PostgreSQL"]
+    },
+    {
+      "title": "Apollo",
+      "content": "Dashboard de visualisation de données pour l'entreprise Novartis, qui permet de voir et interpréter des suivis médicaux de patients.",
+      "imageLink": "apollo",
+      "date": "Février 2024 - Juillet 2024",
+      "skills": ["React", "Typescript", "Redux", "Python", "Minio", "FastAPI"]
+    }
+  ],
+  "Gutenberg Technology": [
+    {
+      "title": "MEFio",
+      "content": "Plateforme de gestion de contenu collaboratif",
+      "date": "Septembre 2022 - Septembre 2023",
+      "skills": ["Typescript", "React", "Angular", "Node"],
+      "webLink": "https://www.gutenberg-technology.com/fr",
+      "imageLink": "https://media.licdn.com/dms/image/C4E0BAQET_TFZfe0K4A/company-logo_200_200/0/1630604022224/gutenberg_technology_logo?e=2147483647&v=beta&t=3ucFVli7DommV01ADraMoSaTUeiY9mAEYjq5glsIslc"
+    }
+  ],
+  "Ciril Group": [
+    {
+      "title": "Toolkit E2E",
+      "content": "Outil permettant de faciliter le développement de tests end-to-end",
+      "imageLink": "placeholder",
+      "date": "Septembre 2019 - Septembre 2020",
+      "skills": ["Typescript", "PostgreSQL"],
+      "webLink": "https://www.cirilgroup.com/fr/"
+    },
+    {
+      "title": "Système de logging",
+      "content": "Outil de logging créé pour les développeurs de Ciril GROUP pour simplifier la recherche de problèmes.",
+      "imageLink": "placeholder",
+      "date": "Septembre 2020 - Septembre 2021",
+      "skills": ["C", "Java"],
+      "webLink": "https://www.cirilgroup.com/fr/"
+    },
+    {
+      "title": "Système de sondes",
+      "content": "Outils qui analyse les applications clientes pour prévenir de potentielles pannes ou crashs.",
+      "imageLink": "placeholder",
+      "date": "Septembre 2021 - Septembre 2022",
+      "skills": ["C", "Java"],
+      "webLink": "https://www.cirilgroup.com/fr/"
+    }
+  ]
 }

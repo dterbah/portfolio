@@ -3,15 +3,16 @@ import ProjectionSectionType from "../../../../types/Project/ProjectSectionType"
 
 import persoProjects from "./data/perso.json";
 import proProjects from "./data/pro.json";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import ProjectContent from "./ProjectContent";
 import Project from "../../../../types/Project/Project";
 
 interface ProjectsWrapperProps {
   section: ProjectionSectionType;
+  setSkills: (skills: string[]) => void;
 }
 
-const ProjectsWrapper = ({ section }: ProjectsWrapperProps) => {
+const ProjectsWrapper = ({ section, setSkills }: ProjectsWrapperProps) => {
   const projects = useMemo(() => {
     return (section === "pro" ? proProjects : persoProjects) as any;
   }, [section]);
@@ -20,30 +21,51 @@ const ProjectsWrapper = ({ section }: ProjectsWrapperProps) => {
   const [tab, setTab] = useState(0);
 
   const selectedProjects = useMemo(() => {
-    const category = projectCategories[tab];
+    const category =
+      tab > projectCategories.length
+        ? projectCategories[0]
+        : projectCategories[tab];
     return projects[category];
-  }, [tab]);
+  }, [tab, section]);
 
   const handleTabChanged = (_: React.SyntheticEvent, newValue: number) => {
     setTab(newValue);
   };
 
+  useEffect(() => {
+    setTab(0);
+  }, [section]);
+
+  useEffect(() => {
+    const skills = [
+      ...new Set<string>(
+        ...selectedProjects.map((project: Project) => project.skills)
+      ),
+    ];
+
+    setSkills(skills);
+  }, [section, tab]);
+
   return (
     <>
-      <Tabs value={tab} onChange={handleTabChanged}>
-        {projectCategories.map((projectCategory, index) => (
-          <Tab label={projectCategory} key={index} />
-        ))}
-      </Tabs>
-      <Box>
-        <Grid container spacing={2}>
-          {selectedProjects.map((project: Project, index: number) => (
-            <Grid item xs={5.9} key={index}>
-              <ProjectContent {...project} />
+      {selectedProjects && (
+        <>
+          <Tabs value={tab} onChange={handleTabChanged}>
+            {projectCategories.map((projectCategory, index) => (
+              <Tab label={projectCategory} key={index} />
+            ))}
+          </Tabs>
+          <Box>
+            <Grid container spacing={2}>
+              {selectedProjects.map((project: Project, index: number) => (
+                <Grid item xs={6} key={index}>
+                  <ProjectContent {...project} />
+                </Grid>
+              ))}
             </Grid>
-          ))}
-        </Grid>
-      </Box>
+          </Box>
+        </>
+      )}
     </>
   );
 };

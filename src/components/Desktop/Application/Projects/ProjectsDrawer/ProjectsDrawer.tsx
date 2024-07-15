@@ -7,19 +7,27 @@ import {
   Toolbar,
   List,
   Box,
+  Divider,
 } from "@mui/material";
 import { useTranslation } from "react-i18next";
 import CodeIcon from "@mui/icons-material/Code";
 import BusinessIcon from "@mui/icons-material/Business";
 import { ReactNode } from "react";
-import ProjectionSectionType from "../../../../types/Project/ProjectSectionType";
+import ProjectionSectionType from "../../../../../types/Project/ProjectSectionType";
+import ProjectsSkillList from "./ProjectsSkillList";
+import EngineeringIcon from "@mui/icons-material/Engineering";
 
 interface ProjectsDrawerProps {
   section: ProjectionSectionType;
   onSectionChanged: (newSection: ProjectionSectionType) => void;
+  skills: string[];
 }
 
-const ProjectsDrawer = ({ section, onSectionChanged }: ProjectsDrawerProps) => {
+const ProjectsDrawer = ({
+  section,
+  onSectionChanged,
+  skills,
+}: ProjectsDrawerProps) => {
   const { t } = useTranslation();
 
   const drawerSections: Array<{
@@ -82,44 +90,19 @@ const ProjectsDrawer = ({ section, onSectionChanged }: ProjectsDrawerProps) => {
             </ListItem>
           ))}
         </List>
+        <Divider />
+        <List>
+          <ListItem>
+            <ListItemIcon>
+              <EngineeringIcon />
+            </ListItemIcon>
+            <ListItemText primary="Overview des compétences" />
+          </ListItem>
+        </List>
+
+        <ProjectsSkillList skills={skills} />
       </Box>
     </Drawer>
-    // <Stack
-    //   sx={(theme) => ({
-    //     width: "25%",
-    //     height: "100%",
-    //     borderRight: `1px solid ${theme.palette.grey[400]}`,
-    //   })}
-    // >
-    //   {drawerSections.map((drawerSection, index) => (
-    //     <ListItem
-    //       key={index}
-    //       disablePadding
-    //       sx={(theme) => ({
-    //         color:
-    //           section === drawerSection.section
-    //             ? theme.palette.primary.main
-    //             : "",
-    //       })}
-    //     >
-    //       <ListItemButton
-    //         onClick={() => onSectionChanged(drawerSection.section)}
-    //       >
-    //         <ListItemIcon
-    //           sx={(theme) => ({
-    //             color:
-    //               section === drawerSection.section
-    //                 ? theme.palette.primary.main
-    //                 : "",
-    //           })}
-    //         >
-    //           {drawerSection.icon}
-    //         </ListItemIcon>
-    //         <ListItemText primary={drawerSection.name} />
-    //       </ListItemButton>
-    //     </ListItem>
-    //   ))}
-    // </Stack>
   );
 };
 
