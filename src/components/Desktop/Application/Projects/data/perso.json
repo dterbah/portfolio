@@ -47,7 +47,7 @@
       "title": "Data-France-Visualization",
       "content": "Application qui permet de visualiser des données concernant la France (consommation, prix, ...).",
       "link": "https://github.com/dterbah/Data-France-Visualization",
-      "imageLink": "https://www.opendatasoft.com/wp-content/uploads/2022/08/Blog-thumbnail.png",
+      "imageLink": "https://raw.githubusercontent.com/dterbah/Data-France-Visualization/main/assets/logo.png",
       "date": "Mars 2023",
       "webLink": "https://data-france-visualization.netlify.app/",
       "skills": ["Typescript", "VueJS", "Rest"]

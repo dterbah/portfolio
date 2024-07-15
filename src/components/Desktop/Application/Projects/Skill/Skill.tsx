@@ -12,6 +12,7 @@ const Skill = ({ skill }: SkillProps) => {
       sx={(theme) => ({
         backgroundColor: getSkillColor(skill as ISkill, theme),
         color: "white",
+        m: 0.25,
       })}
     />
   );
