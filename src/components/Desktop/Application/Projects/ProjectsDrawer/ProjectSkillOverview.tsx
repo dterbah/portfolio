@@ -1,11 +1,11 @@
 import { Box } from "@mui/material";
 import Skill from "../Skill/Skill";
 
-interface ProjectsSkillListProps {
+interface ProjectSkillOverviewProps {
   skills: string[];
 }
 
-const ProjectsSkillList = ({ skills }: ProjectsSkillListProps) => {
+const ProjectSkillOverview = ({ skills }: ProjectSkillOverviewProps) => {
   return (
     <Box
       sx={{
@@ -13,10 +13,10 @@ const ProjectsSkillList = ({ skills }: ProjectsSkillListProps) => {
       }}
     >
       {skills.map((skill, index) => {
-        return <Skill skill={skill} />;
+        return <Skill skill={skill} key={index} />;
       })}
     </Box>
   );
 };
 
-export default ProjectsSkillList;
+export default ProjectSkillOverview;

@@ -14,7 +14,7 @@ import CodeIcon from "@mui/icons-material/Code";
 import BusinessIcon from "@mui/icons-material/Business";
 import { ReactNode } from "react";
 import ProjectionSectionType from "../../../../../types/Project/ProjectSectionType";
-import ProjectsSkillList from "./ProjectsSkillList";
+import ProjectSkillOverview from "./ProjectSkillOverview";
 import EngineeringIcon from "@mui/icons-material/Engineering";
 
 interface ProjectsDrawerProps {
@@ -100,7 +100,7 @@ const ProjectsDrawer = ({
           </ListItem>
         </List>
 
-        <ProjectsSkillList skills={skills} />
+        <ProjectSkillOverview skills={skills} />
       </Box>
     </Drawer>
   );
