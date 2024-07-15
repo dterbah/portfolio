@@ -14,6 +14,8 @@ import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import cv from "@/assets/cv/cv.pdf";
 import sendForm from "../../../../utils/sendForm";
 
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 const initialForm = {
   name: "",
   email: "",
@@ -31,7 +33,11 @@ const Contact = () => {
 
   const [sending, setSending] = useState(false);
 
-  const canSend = formData.email && formData.message && formData.name;
+  const canSend =
+    formData.email &&
+    formData.message &&
+    formData.name &&
+    EMAIL_REGEX.test(formData.email);
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
