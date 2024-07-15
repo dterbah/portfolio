@@ -29,5 +29,16 @@
         "title": "Projets personnels"
       }
     }
+  },
+  "contact": {
+    "title": "Me contacter",
+    "submit": "Envoyer",
+    "content": "Si mon profil vous intéresse et que vous souhaitez en savoir plus sur mon profil, vous pouvez m'envoyer un message via ce formulaire !",
+    "name": "Nom",
+    "email": "Email",
+    "message": "Message",
+    "findMyCV": "Ouvrir CV",
+    "error": "Erreur dans l'envoie du message. Veuillez réessayer ultérieurement.",
+    "success": "Message envoyé avec succès !"
   }
 }

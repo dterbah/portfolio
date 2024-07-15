@@ -1,3 +1,4 @@
+import CssBaseline from "@mui/material/CssBaseline";
 import Desktop from "./components/Desktop/Desktop";
 import "./App.css";
 import { useEffect, useMemo, useState } from "react";
@@ -62,6 +63,7 @@ const App = () => {
     <>
       {i18NInit && (
         <ThemeProvider theme={theme}>
+          <CssBaseline />
           <Provider store={store}>
             <Box
               sx={{
