@@ -96,7 +96,7 @@ const ProjectsDrawer = ({
             <ListItemIcon>
               <EngineeringIcon />
             </ListItemIcon>
-            <ListItemText primary="Overview des compétences" />
+            <ListItemText primary={t("projects.drawer.overview")} />
           </ListItem>
         </List>
 

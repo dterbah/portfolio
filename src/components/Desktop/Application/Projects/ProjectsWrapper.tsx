@@ -37,11 +37,15 @@ const ProjectsWrapper = ({ section, setSkills }: ProjectsWrapperProps) => {
   }, [section]);
 
   useEffect(() => {
-    const skills = [
-      ...new Set<string>(
-        ...selectedProjects.map((project: Project) => project.skills)
-      ),
-    ];
+    const getSkills = () => {
+      const currentSkills: string[] = selectedProjects
+        .map((project: Project) => project.skills)
+        .flat();
+
+      return [...new Set<string>(currentSkills)];
+    };
+
+    const skills = selectedProjects ? getSkills() : [];
 
     setSkills(skills);
   }, [section, tab]);

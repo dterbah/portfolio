@@ -16,6 +16,9 @@
     }
   },
   "projects": {
+    "drawer": {
+      "overview": "Résumé des compétences"
+    },
     "seeCode": "Voir le code source",
     "seeApp": "Accéder à l'application",
     "sections": {

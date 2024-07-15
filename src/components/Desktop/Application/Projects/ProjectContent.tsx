@@ -20,6 +20,8 @@ import hevaLogo from "@/assets/projects/logo/heva.svg";
 import apolloLogo from "@/assets/projects/logo/apollo.png";
 import placeholderLogo from "@/assets/projects/logo/placeholder.svg";
 
+import TodayIcon from "@mui/icons-material/Today";
+
 const logoMaps = new Map<string, string>([
   ["osiris", osirisLogo],
   ["heva", hevaLogo],
@@ -63,7 +65,15 @@ const ProjectContent = ({
 
   return (
     <StyledCard>
-      <CardHeader title={title} subheader={date} />
+      <CardHeader
+        title={title}
+        subheader={
+          <Box display="flex" gap={1}>
+            <TodayIcon />
+            <Typography>{date}</Typography>
+          </Box>
+        }
+      />
       <CardMedia
         component="img"
         image={computedImageLink}

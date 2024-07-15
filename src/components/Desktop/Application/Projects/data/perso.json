@@ -6,7 +6,7 @@
       "link": "https://github.com/dterbah/gods",
       "imageLink": "https://raw.githubusercontent.com/dterbah/gods/main/assets/logo.webp",
       "date": "Juin 2024",
-      "skills": ["Go"]
+      "skills": ["Go", "CI/CD"]
     },
     {
       "title": "Go Package Manager",
@@ -14,7 +14,7 @@
       "link": "https://github.com/dterbah/gopm",
       "imageLink": "https://raw.githubusercontent.com/dterbah/gopm/main/assets/logo.webp",
       "date": "Juillet 2024",
-      "skills": ["Go"]
+      "skills": ["Go", "CI/CD"]
     },
     {
       "title": "Go-Test-Gen",
@@ -22,7 +22,7 @@
       "link": "https://github.com/dterbah/go-test-gen",
       "imageLink": "https://raw.githubusercontent.com/dterbah/go-test-gen/main/assets/logo.webp",
       "date": "Juin 2024",
-      "skills": ["Go"]
+      "skills": ["Go", "CI/CD"]
     },
     {
       "title": "Go-Logic",
@@ -30,7 +30,7 @@
       "link": "https://github.com/dterbah/go-logic?tab=readme-ov-file",
       "imageLink": "https://raw.githubusercontent.com/dterbah/go-logic/main/assets/logo.webp",
       "date": "Juillet 2024",
-      "skills": ["Go"]
+      "skills": ["Go", "CI/CD"]
     }
   ],
   "Web": [

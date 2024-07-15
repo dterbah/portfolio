@@ -1,41 +1,47 @@
 import { Theme } from "@mui/material";
 
-const getSkillColor = (skill: string, theme: Theme) => {
-  if (skill === "Go") {
-    return theme.palette.primary.light;
-  } else if (skill === "Typescript") {
-    return theme.palette.primary.main;
-  } else if (skill === "VueJS") {
-    return theme.palette.success.light;
-  } else if (skill === "Python") {
-    return "#ffcb3a";
-  } else if (skill === "Flask") {
-    return "black";
-  } else if (skill === "Javascript") {
-    return "#f0db50";
-  } else if (skill === "React") {
-    return "#61dbfc";
-  } else if (skill === "PostgreSQL") {
-    return "#32648d";
-  } else if (skill === "Rest") {
-    return "#9fdfab";
-  } else if (skill === "Redux") {
-    return "#8c67c5";
-  } else if (skill === "minio") {
-    return "red";
-  } else if (skill === "FastAPI") {
-    return "#059587";
-  } else if (skill === "Java") {
-    return "#d63435";
-  } else if (skill === "C") {
-    return "#00427e";
-  } else if (skill === "Angular") {
-    return "#bd002d";
-  } else if (skill === "Node") {
-    return "#3e863d";
-  }
+export type Skill =
+  | "Go"
+  | "Typescript"
+  | "VueJS"
+  | "Python"
+  | "Flask"
+  | "Javascript"
+  | "React"
+  | "PostgreSQL"
+  | "Rest"
+  | "Redux"
+  | "minio"
+  | "FastAPI"
+  | "Java"
+  | "C"
+  | "Angular"
+  | "Node"
+  | "CI/CD";
 
-  return "orange";
+const skillColors = {
+  Go: (theme: Theme) => theme.palette.primary.light,
+  Typescript: (theme: Theme) => theme.palette.primary.main,
+  VueJS: (theme: Theme) => theme.palette.success.light,
+  Python: "#ffcb3a",
+  Flask: "black",
+  Javascript: "#f0db50",
+  React: "#61dbfc",
+  PostgreSQL: "#32648d",
+  Rest: "#9fdfab",
+  Redux: "#8c67c5",
+  minio: "red",
+  FastAPI: "#059587",
+  Java: "#d63435",
+  C: "#00427e",
+  Angular: "#bd002d",
+  Node: "#3e863d",
+  "CI/CD": "#e34a32",
+};
+
+const getSkillColor = (skill: Skill, theme: Theme) => {
+  const color = skillColors[skill];
+  return typeof color === "function" ? color(theme) : color || "orange";
 };
 
 export default getSkillColor;
