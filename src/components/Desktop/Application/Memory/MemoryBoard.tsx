@@ -3,6 +3,9 @@ import { Box } from "@mui/material";
 import reactPath from "@/assets/memory/react.png";
 import typescriptPath from "@/assets/memory/typescript.png";
 import pythonPath from "@/assets/memory/python.png";
+import fastapiPath from "@/assets/memory/fastapi.png";
+import golangPath from "@/assets/memory/golang.png";
+import javascriptPath from "@/assets/memory/javascript.png";
 import MemoryCard from "./MemoryCard";
 import ElapsedTime from "./ElapsedTime";
 import randomSortArray from "../../../../utils/randomSortArray";
@@ -14,6 +17,12 @@ const defaultBoard = [
   typescriptPath,
   pythonPath,
   pythonPath,
+  fastapiPath,
+  fastapiPath,
+  golangPath,
+  golangPath,
+  javascriptPath,
+  javascriptPath,
 ];
 
 const MemoryBoard = () => {
@@ -30,8 +39,6 @@ const MemoryBoard = () => {
     () => cardsRevealed.every((card) => card),
     [cardsRevealed]
   );
-
-  console.log(board);
 
   const revealCard = useCallback(
     (id: number) => {
@@ -88,7 +95,7 @@ const MemoryBoard = () => {
           <Box
             key={index}
             sx={{
-              width: "20%",
+              width: "25%",
               mb: 1,
             }}
           >
