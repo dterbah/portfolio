@@ -1,5 +1,4 @@
 /** @jsxImportSource @emotion/react */
-import React from "react";
 import { Box } from "@mui/material";
 import { css, keyframes } from "@emotion/react";
 
