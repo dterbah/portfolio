@@ -80,8 +80,8 @@ const App = () => {
               sx={{
                 cursor: `url(${cursor}), auto`,
                 height: "100vh",
-                overflow: "hidden", // To ensure no scrollbar appears during transition
-                backgroundColor: "#0078d7", // Same as your background color
+                overflow: "hidden",
+                backgroundColor: "#0078d7",
               }}
             >
               <TransitionGroup style={{ height: "100%" }}>
