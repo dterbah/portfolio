@@ -12,7 +12,7 @@ const DesktopMenuContent = () => {
   const { t } = useTranslation();
   const search = useAppSelector((state) => state.desktopMenu.search);
   const applications = Object.entries(getDesktopConfig()).filter((app) =>
-    app[1].name.startsWith(search)
+    app[1].name.toLowerCase().startsWith(search.toLowerCase())
   );
   const dispatch = useAppDispatch();
 

@@ -14,10 +14,13 @@ interface SearchTextFieldProps {
 const SearchTextField = ({ width }: SearchTextFieldProps) => {
   const { t } = useTranslation();
   const search = useAppSelector((state) => state.desktopMenu.search);
+  const open = useAppSelector((state) => state.desktopMenu.isOpen);
   const dispatch = useAppDispatch();
 
   const onSearchChanged = (newSearch: string) => {
-    dispatch(toggleDesktopMenu());
+    if (!open) {
+      dispatch(toggleDesktopMenu());
+    }
     dispatch(updateSearch(newSearch));
   };
 

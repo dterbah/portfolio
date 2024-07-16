@@ -15,8 +15,8 @@ import Draggable from "react-draggable";
 import { CSSTransition } from "react-transition-group";
 
 // Content components
-import CV from "./CV/CV";
 import About from "./About/About";
+import Memory from "./Memory/Memory";
 import Contact from "./Contact/Contact";
 import ProjectsView from "./Projects/ProjectsView";
 import { useAppDispatch } from "../../../store/store";
@@ -32,9 +32,9 @@ interface WindowsAppProps {
 
 const contentMap: { [key in DesktopApplication]: ElementType } = {
   about: About,
-  cv: CV,
   contact: Contact,
   projects: ProjectsView,
+  memory: Memory,
 };
 
 const DesktopApplicationInstance: React.FC<WindowsAppProps> = ({

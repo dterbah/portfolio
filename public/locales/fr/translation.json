@@ -7,7 +7,7 @@
       "about": "A propos",
       "contact": "Me contacter",
       "projects": "Mes projets",
-      "cv": "Mon CV"
+      "memory": "Memory"
     },
     "menu": {
       "applications": "Applications"
@@ -42,5 +42,10 @@
     "findMyCV": "Ouvrir CV",
     "error": "Erreur dans l'envoie du message. Veuillez réessayer ultérieurement.",
     "success": "Message envoyé avec succès !"
+  },
+  "memory": {
+    "title": "Jeu du Memory",
+    "startGame": "Commencer une partie",
+    "elapsedTime": "Temps écoulé : "
   }
 }
