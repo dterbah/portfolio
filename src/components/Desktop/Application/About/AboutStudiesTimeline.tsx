@@ -5,52 +5,80 @@ import TimelineConnector from "@mui/lab/TimelineConnector";
 import TimelineContent from "@mui/lab/TimelineContent";
 import TimelineOppositeContent from "@mui/lab/TimelineOppositeContent";
 import TimelineDot from "@mui/lab/TimelineDot";
-import FastfoodIcon from "@mui/icons-material/Fastfood";
-import LaptopMacIcon from "@mui/icons-material/LaptopMac";
 import Typography from "@mui/material/Typography";
 
 import LaptopIcon from "@mui/icons-material/Laptop";
 import SchoolIcon from "@mui/icons-material/School";
 import EngineeringIcon from "@mui/icons-material/Engineering";
-import { useTranslation } from "react-i18next";
+import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 
-const timelineData = {
-  highSchool: <SchoolIcon />,
-  dut: <LaptopIcon />,
-  insa: <EngineeringIcon />,
+import { useTranslation } from "react-i18next";
+import { ReactNode } from "react";
+
+interface TimelineStep {
+  icon: ReactNode;
+  bg?: string;
+}
+
+type TimelineData = {
+  highSchool: TimelineStep;
+  dut: TimelineStep;
+  insead: TimelineStep;
+  insa: TimelineStep;
+};
+
+const timelineData: TimelineData = {
+  highSchool: { icon: <SchoolIcon />, bg: "#3498db" },
+  dut: { icon: <LaptopIcon />, bg: "#e67e22" },
+  insead: { icon: <BusinessCenterIcon />, bg: "#015e4a" },
+  insa: { icon: <EngineeringIcon />, bg: "#27ae60" },
 };
 
 const AboutStudiesTimeline = () => {
   const { t } = useTranslation();
   return (
-    <Timeline position="left">
-      {Object.entries(timelineData).map((entry, index) => {
-        const [key, icon] = entry;
-        return (
-          <TimelineItem key={index}>
-            <TimelineOppositeContent
-              sx={{ m: "auto 0" }}
-              align="right"
-              variant="body2"
-              color="text.secondary"
-            >
-              <Typography>{t(`about.timeline.${key}.content`)}</Typography>
-            </TimelineOppositeContent>
-            <TimelineSeparator>
-              <TimelineConnector />
-              <TimelineDot>{icon}</TimelineDot>
-              <TimelineConnector />
-            </TimelineSeparator>
-            <TimelineContent sx={{ py: "12px", px: 2 }}>
-              <Typography variant="h6" component="span">
-                {t(`about.timeline.${key}.title`)}
-              </Typography>
-              <Typography>{t(`about.timeline.${key}.date`)}</Typography>
-            </TimelineContent>
-          </TimelineItem>
-        );
-      })}
-    </Timeline>
+    <>
+      <Typography variant="h6" textAlign="center">
+        {t("about.timeline.title")}
+      </Typography>
+      <Timeline position="left">
+        {Object.entries(timelineData).map((entry, index) => {
+          const [key, config] = entry;
+          const bgSx = config.bg ? { backgroundColor: config.bg } : {};
+          return (
+            <TimelineItem key={index}>
+              <TimelineOppositeContent
+                sx={{ m: "auto 0" }}
+                align="right"
+                variant="body2"
+                color="text.secondary"
+              >
+                <Typography fontFamily="Montserrat, sans-serif">
+                  {t(`about.timeline.${key}.content`)}
+                </Typography>
+              </TimelineOppositeContent>
+              <TimelineSeparator>
+                <TimelineConnector />
+                <TimelineDot sx={{ ...bgSx }}>{config.icon}</TimelineDot>
+                <TimelineConnector />
+              </TimelineSeparator>
+              <TimelineContent sx={{ py: "12px", px: 2 }}>
+                <Typography
+                  variant="h6"
+                  component="span"
+                  fontFamily="Montserrat, sans-serif"
+                >
+                  {t(`about.timeline.${key}.title`)}
+                </Typography>
+                <Typography fontFamily="Montserrat, sans-serif">
+                  {t(`about.timeline.${key}.date`)}
+                </Typography>
+              </TimelineContent>
+            </TimelineItem>
+          );
+        })}
+      </Timeline>
+    </>
   );
 };
 

@@ -8,10 +8,11 @@ const AboutBody = () => {
     <Box
       sx={{
         width: "80%",
-        fontFamily: "'Montserrat', sans-serif",
       }}
     >
-      <Typography>{t("about.introduction")}</Typography>
+      <Typography fontFamily="Montserrat, sans-serif">
+        {t("about.introduction")}
+      </Typography>
       <AboutStudiesTimeline />
     </Box>
   );

@@ -52,17 +52,23 @@
   },
   "about": {
     "title": "A propos",
-    "introduction": "Bonjour et bienvenue sur mon portfolio ! Je m'appelle Dorian TERBAH et je suis passioné de développement web depuis plusieurs années. Vous trouverez dans cette section, vous trouverez des informations concernant mon parcours professionel, ce qui m'a donné envie de faire de l'informatique et ce que je fais aujourd'hui",
+    "introduction": "Bonjour et bienvenue sur mon portfolio !",
     "timeline": {
+      "title": "Mon parcours scolaire",
       "highSchool": {
         "title": "Lycée",
         "date": "Février 2017",
-        "content": "test"
+        "content": "J'ai découvert l'informatique à la fin de mon lycée. J'ai débuté avec du Python, et j'ai également eu l'occasion de faire mes premiers pas dans le monde du Web. "
       },
       "dut": {
         "title": "DUT Informatique",
         "date": "Septembre 2017 - Septembre 2019",
-        "content": "test"
+        "content": "J'ai eu l'occasion de découvrir beaucoup de facettes de l'informatique. De la base de données, en passant par du réseau et en finissant par le développement, j'ai tout de suite compris que cette dernière catégorie était faite pour moi"
+      },
+      "insead": {
+        "title": "Apprentissage à l'INSEAD",
+        "date": "Septembre 2018 - Septembre 2019",
+        "content": "insead"
       },
       "insa": {
         "title": "INSA",

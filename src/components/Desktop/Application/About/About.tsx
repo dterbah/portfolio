@@ -1,8 +1,6 @@
 import { Box } from "@mui/material";
 import AboutBody from "./AboutBody";
 
-import "./About.css";
-
 const About = () => {
   return (
     <Box
@@ -17,6 +15,7 @@ const About = () => {
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "column",
+        fontFamily: "Montserrat, sans-serif",
       }}
     >
       <AboutBody />
