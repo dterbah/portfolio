@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useCallback } from "react";
+import React, { useMemo, useState, useCallback, useEffect } from "react";
 import { Box } from "@mui/material";
 import reactPath from "@/assets/memory/react.png";
 import typescriptPath from "@/assets/memory/typescript.png";
@@ -9,23 +9,29 @@ import javascriptPath from "@/assets/memory/javascript.png";
 import MemoryCard from "./MemoryCard";
 import ElapsedTime from "./ElapsedTime";
 import randomSortArray from "../../../../utils/randomSortArray";
+import MemoryEndGame from "./MemoryEndGame";
 
 const defaultBoard = [
+  javascriptPath,
+  javascriptPath,
   reactPath,
   reactPath,
+  golangPath,
+  golangPath,
   typescriptPath,
   typescriptPath,
   pythonPath,
   pythonPath,
   fastapiPath,
   fastapiPath,
-  golangPath,
-  golangPath,
-  javascriptPath,
-  javascriptPath,
 ];
 
-const MemoryBoard = () => {
+interface MemoryBoardProps {
+  onGameFinished: () => void;
+  refresh: boolean;
+}
+
+const MemoryBoard = ({ onGameFinished, refresh }: MemoryBoardProps) => {
   const [cardsRevealed, setCardsRevealed] = useState<boolean[]>(
     defaultBoard.map(() => false)
   );
@@ -33,12 +39,25 @@ const MemoryBoard = () => {
     undefined
   );
 
-  const board = useMemo(() => randomSortArray(defaultBoard), []);
+  const [board, setBoard] = useState(randomSortArray(defaultBoard));
 
   const gameFinished = useMemo(
     () => cardsRevealed.every((card) => card),
     [cardsRevealed]
   );
+
+  useEffect(() => {
+    if (gameFinished) {
+      onGameFinished();
+    }
+  }, [gameFinished]);
+
+  useEffect(() => {
+    if (refresh) {
+      setCardsRevealed(defaultBoard.map(() => false));
+      setBoard(randomSortArray(defaultBoard));
+    }
+  }, [refresh]);
 
   const revealCard = useCallback(
     (id: number) => {
@@ -82,7 +101,7 @@ const MemoryBoard = () => {
         mt: 2,
       }}
     >
-      <ElapsedTime isStop={gameFinished} />
+      <ElapsedTime isStop={!refresh} />
       <Box
         sx={{
           display: "flex",
@@ -108,6 +127,7 @@ const MemoryBoard = () => {
           </Box>
         ))}
       </Box>
+      {gameFinished && <MemoryEndGame />}
     </Box>
   );
 };

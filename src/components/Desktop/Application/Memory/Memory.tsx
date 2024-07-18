@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from "@mui/material";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import SportsEsportsIcon from "@mui/icons-material/SportsEsports";
 import MemoryBoard from "./MemoryBoard";
@@ -7,6 +7,16 @@ import MemoryBoard from "./MemoryBoard";
 const Memory = () => {
   const { t } = useTranslation();
   const [gameBegin, setGameBegin] = useState(false);
+  const firstTime = useRef<boolean>(true);
+
+  const onGameFinished = () => {
+    setGameBegin(false);
+  };
+
+  const onGameStart = () => {
+    setGameBegin(true);
+    firstTime.current = false;
+  };
 
   return (
     <Box
@@ -26,12 +36,15 @@ const Memory = () => {
       <Button
         variant="contained"
         endIcon={<SportsEsportsIcon />}
-        onClick={() => setGameBegin(true)}
+        onClick={onGameStart}
+        disabled={gameBegin}
       >
-        {t("memory.startGame")}
+        {firstTime.current ? t("memory.startGame") : t("memory.restartGame")}
       </Button>
 
-      {gameBegin && <MemoryBoard />}
+      {!firstTime.current && (
+        <MemoryBoard onGameFinished={onGameFinished} refresh={gameBegin} />
+      )}
     </Box>
   );
 };

@@ -46,6 +46,29 @@
   "memory": {
     "title": "Jeu du Memory",
     "startGame": "Commencer une partie",
-    "elapsedTime": "Temps écoulé : "
+    "restartGame": "Recommencer une partie",
+    "elapsedTime": "Temps écoulé : ",
+    "endGameMessage": "Vous avez terminé la partie !"
+  },
+  "about": {
+    "title": "A propos",
+    "introduction": "Bonjour et bienvenue sur mon portfolio ! Je m'appelle Dorian TERBAH et je suis passioné de développement web depuis plusieurs années. Vous trouverez dans cette section, vous trouverez des informations concernant mon parcours professionel, ce qui m'a donné envie de faire de l'informatique et ce que je fais aujourd'hui",
+    "timeline": {
+      "highSchool": {
+        "title": "Lycée",
+        "date": "Février 2017",
+        "content": "test"
+      },
+      "dut": {
+        "title": "DUT Informatique",
+        "date": "Septembre 2017 - Septembre 2019",
+        "content": "test"
+      },
+      "insa": {
+        "title": "INSA",
+        "date": "Septembre 2019 - Septembre 2022",
+        "content": "test"
+      }
+    }
   }
 }

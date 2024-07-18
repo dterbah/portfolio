@@ -8,24 +8,25 @@ interface ElapsedTimeProps {
 
 const ElapsedTime = ({ isStop }: ElapsedTimeProps) => {
   const [elapsedTime, setElapsedTime] = useState(0);
-  const [timer, setTimer] = useState<NodeJS.Timeout>();
+  const { t } = useTranslation();
 
   useEffect(() => {
-    const id = setInterval(() => {
-      setElapsedTime((e) => e + 1);
-    }, 1000);
-    setTimer(id);
+    let timer: NodeJS.Timeout;
 
-    return () => clearInterval(id);
-  }, []);
-
-  useEffect(() => {
     if (isStop) {
-      clearInterval(timer);
+      clearInterval(timer!);
+    } else {
+      setElapsedTime(0);
+      timer = setInterval(() => {
+        setElapsedTime((e) => e + 1);
+      }, 1000);
     }
+
+    return () => {
+      clearInterval(timer);
+    };
   }, [isStop]);
 
-  const { t } = useTranslation();
   return (
     <Typography variant="body2">
       {t("memory.elapsedTime") + elapsedTime + "s"}
