@@ -24,7 +24,7 @@ const DesktopMenuContent = () => {
   return (
     <Box
       sx={{
-        height: "60%",
+        height: "50%",
         display: "flex",
         justifyContent: "center",
       }}
