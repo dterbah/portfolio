@@ -11,6 +11,9 @@ import LaptopIcon from "@mui/icons-material/Laptop";
 import SchoolIcon from "@mui/icons-material/School";
 import EngineeringIcon from "@mui/icons-material/Engineering";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import GroupIcon from "@mui/icons-material/Group";
+import MenuBookIcon from "@mui/icons-material/MenuBook";
+import LocalHospitalIcon from "@mui/icons-material/LocalHospital";
 
 import { useTranslation } from "react-i18next";
 import { ReactNode } from "react";
@@ -25,6 +28,9 @@ type TimelineData = {
   dut: TimelineStep;
   insead: TimelineStep;
   insa: TimelineStep;
+  cirilGroup: TimelineStep;
+  gt: TimelineStep;
+  heva: TimelineStep;
 };
 
 const timelineData: TimelineData = {
@@ -32,6 +38,9 @@ const timelineData: TimelineData = {
   dut: { icon: <LaptopIcon />, bg: "#e67e22" },
   insead: { icon: <BusinessCenterIcon />, bg: "#015e4a" },
   insa: { icon: <EngineeringIcon />, bg: "#27ae60" },
+  cirilGroup: { icon: <GroupIcon />, bg: "#1359a2" },
+  gt: { icon: <MenuBookIcon />, bg: "#75d8e7" },
+  heva: { icon: <LocalHospitalIcon />, bg: "#0a0aff" },
 };
 
 const AboutStudiesTimeline = () => {

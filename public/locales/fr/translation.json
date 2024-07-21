@@ -54,7 +54,7 @@
     "title": "A propos",
     "introduction": "Bonjour et bienvenue sur mon portfolio !",
     "timeline": {
-      "title": "Mon parcours scolaire",
+      "title": "Mon parcours du lycée jusqu'à aujourd'hui",
       "highSchool": {
         "title": "Lycée",
         "date": "Février 2017",
@@ -63,17 +63,32 @@
       "dut": {
         "title": "DUT Informatique",
         "date": "Septembre 2017 - Septembre 2019",
-        "content": "J'ai eu l'occasion de découvrir beaucoup de facettes de l'informatique. De la base de données, en passant par du réseau et en finissant par le développement, j'ai tout de suite compris que cette dernière catégorie était faite pour moi"
+        "content": "J'ai eu l'occasion de découvrir beaucoup de facettes de l'informatique. De la base de données, en passant par du réseau et en finissant par le développement, j'ai tout de suite compris que cette dernière catégorie était faite pour moi."
       },
       "insead": {
         "title": "Apprentissage à l'INSEAD",
         "date": "Septembre 2018 - Septembre 2019",
-        "content": "insead"
+        "content": "Pendant ma deuxième année de DUT informatique à Fontainebleau, j'ai pu prendre mes marques dans le monde du Web. J'ai pu développé un serious game et une plateforme donnant accès aux étudiants des cours de maangement et de business."
       },
       "insa": {
         "title": "INSA",
         "date": "Septembre 2019 - Septembre 2022",
-        "content": "test"
+        "content": "Durant mon parcours d'ingénieur, j'ai pu monter en compétences sur bon nombre de domaines, notamment dans le développement logiciel. J'ai eu également l'occasion de faire mes 3 années de cycle d'ingénieur en apprentissage au sein de Ciril Group."
+      },
+      "cirilGroup": {
+        "title": "Ciril Group",
+        "date": "Septembre 2019 - Septembre 2022",
+        "content": "Pendant ces 3 ans, j'ai pu travailler sur trois gros projets : la création d'un framework de tests end-to-end, un système de logging et suivi en temps réel de la santé des applications déployées chez les clients."
+      },
+      "gt": {
+        "title": "Gutenberg Technology",
+        "date": "Septembre 2022 - Septembre 2023",
+        "content": "Au sein de Gutenberg Technology, j'ai pu créer des fonctionnalités pour améliorer l'expérience utilisateur, optimiser la taille des données et corriger l'existant."
+      },
+      "heva": {
+        "title": "Heva",
+        "date": "Septembre 2023 - Septembre 2024",
+        "content": "J'ai eu l'opportunité de travailler sur une application de simulation de coûts, un dashboard interactif de visualisation de données et un logiciel pour optimiser coûts de traitements médicaux."
       }
     }
   }
