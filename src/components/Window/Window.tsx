@@ -30,7 +30,7 @@ const WindowComponent = ({ type }: WindowProps) => {
     let idTimeout: NodeJS.Timeout;
     if (type === "exiting") {
       idTimeout = setTimeout(() => {
-        window.close();
+        window.open("", "_self")?.close();
       }, 3500);
     }
 

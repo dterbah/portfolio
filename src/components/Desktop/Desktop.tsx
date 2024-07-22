@@ -25,7 +25,7 @@ const BoxApplication = styled(Box)({
   display: "flex",
   width: "8%",
   flexDirection: "column",
-  paddingTop: "5%",
+  paddingTop: 10,
   height: "50%",
   paddingLeft: "2%",
 });
