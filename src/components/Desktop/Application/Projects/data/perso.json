@@ -54,12 +54,12 @@
     },
     {
       "title": "Pokedex",
-      "content": "Application listant des pokemons avec leurs statistiques, leurs évolutions et leurs différentes formes à l'instar d'un pokédex.",
-      "link": "https://github.com/dterbah/pokemon-api",
+      "content": "Application listant des pokemons avec leurs statistiques, un simulateur d'achats d'objets et un mini quizz.",
+      "link": "https://github.com/dterbah/pokedex",
       "imageLink": "https://raw.githubusercontent.com/dterbah/pokemon-api/master/src/assets/logo.png",
-      "date": "Novembre 2019",
-      "webLink": "https://dterbah-pokedex.netlify.app",
-      "skills": ["Javascript", "VueJS", "Rest"]
+      "date": "Octobre 2024",
+      "webLink": "https://dterbah-pokedexv2.netlify.app",
+      "skills": ["Typescript", "Angular", "Rest"]
     }
   ]
 }
