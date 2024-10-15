@@ -1,6 +1,6 @@
 import { Box, Stack, styled } from "@mui/material";
 
-import wallpaperPath from "../../assets/pxfuel.jpg";
+import wallpaperPath from "../../assets/bg.jpeg";
 import DesktopApplication from "./DesktopApplication";
 import getDesktopConfig from "./desktop-config";
 import DesktopFooter from "./Footer/DesktopFooter";
@@ -15,7 +15,7 @@ const BoxDesktop = styled(Box)({
   backgroundRepeat: "no-repeat",
   backgroundSize: "cover",
   backgroundPosition: "center",
-  height: "100%",
+  height: "100vh",
   width: "100%",
   display: "flex",
   flexDirection: "column",
